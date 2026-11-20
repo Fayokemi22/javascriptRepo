@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Job Application Tracker</h1>
+        <p>Keep track of your job applications</p>
+    </header>
+
+    <main>
+
+        <!-- Dashboard Statistics -->
+        <section class="statistics">
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="total-applications">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pending-applications">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Accepted</h3>
+                <p id="accepted-applications">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Rejected</h3>
+                <p id="rejected-applications">0</p>
+            </div>
+        </section>
+
+        <!-- Register Applicant Form -->
+        <section class="form-section">
+            <h2 id="form-title">Register Job Application</h2>
+
+            <form id="applicant-form">
+
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Job Role</label>
+                    <input type="text" id="role" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <input type="text" id="education" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="application_date">Application Date</label>
+                    <input type="date" id="application_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="job_link">Job Link</label>
+                    <input type="url" id="job_link">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Application Status</label>
+                    <select id="status" required>
+                        <option value="">Select Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submit-button">
+                        Register Application
+                    </button>
+
+                    <button type="button" id="cancel-button" hidden>
+                        Cancel Update
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Applicants Table -->
+        <section class="applications-section">
+
+            <h2>My Job Applications</h2>
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search by company or job role..."
+            >
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Company</th>
+                            <th>Job Role</th>
+                            <th>Application Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="applicant-list">
+                        <tr>
+                            <td colspan="6">Loading applications...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
